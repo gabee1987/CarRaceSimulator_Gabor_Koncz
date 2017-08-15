@@ -1,0 +1,12 @@
+The application creates 10 cars, trucks and motorcycles.
+The vehicles are racing for 50 hour, the longest distance traveled vehicle is the winner.
+The name of the cars are randomly selected from a list each time, the simulation starts.
+The name of the trucks are random numbers between 1 and 1000.
+The name of the motorcycles are "Motorcycle" + numbers. (e.g. Motorcycle 1)
+The speed of the cars is randomly selected between 80-110 km/h.
+The speed of the trucks is 100 km/h.
+The speed of the motorcycles is 100 km/h.
+There is a 30% chance of rain, which has the following impact of the speed of the vehicles:
+    Cars are go only with 70km/h.
+    Motorcycles are go with 5-50 km/h slower(randomly selected).
+Trucks has a 5% chance of breaking down for 2 hours.

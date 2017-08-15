@@ -14,7 +14,7 @@ public class FileReader {
             while (data.hasNextLine()) {
                 result.add(data.nextLine());
             }
-        } catch (FileNotFoundException) {
+        } catch (FileNotFoundException e) {
             System.err.println("File not found.");
         }
         return result;
