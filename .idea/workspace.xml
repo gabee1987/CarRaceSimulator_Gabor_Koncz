@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="252b4a98-3e48-4753-a703-f8245de1c746" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hu/codecool/CarRaceSimulator_Gabor_Koncz/FileReader.java" afterPath="$PROJECT_DIR$/src/hu/codecool/CarRaceSimulator_Gabor_Koncz/FileReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hu/codecool/CarRaceSimulator_Gabor_Koncz/Main.java" afterPath="$PROJECT_DIR$/src/hu/codecool/CarRaceSimulator_Gabor_Koncz/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,7 +14,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hu/codecool/CarRaceSimulator_Gabor_Koncz/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1422">
@@ -24,6 +22,16 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1602">
+              <caret line="89" column="51" lean-forward="false" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,6 +111,7 @@
         <option value="$PROJECT_DIR$/src/hu/codecool/CarRaceSimulator_Gabor_Koncz/FileReader.java" />
         <option value="$PROJECT_DIR$/data/documentation.txt" />
         <option value="$PROJECT_DIR$/src/hu/codecool/CarRaceSimulator_Gabor_Koncz/Main.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -298,12 +307,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1502801655240</updated>
-      <workItem from="1502801657640" duration="7311000" />
+      <workItem from="1502801657640" duration="7787000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7311000" />
+    <option name="totallyTimeSpent" value="7787000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -398,6 +407,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1602">
+          <caret line="89" column="51" lean-forward="false" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
