@@ -21,6 +21,7 @@ import java.util.Scanner;
 public class Main {
 
     static Random random = new Random();
+    static Car car = new Car();
 
     public static void main(String[] args) {
         boolean running = true;
@@ -30,7 +31,7 @@ public class Main {
             int selection = getSelection();
             switch (selection) {
                 case 0:
-                    isRaining();
+                    //simulateRace(car);
                     //createVehicles();
                     //simulateRace();
                     //printRaceResults();
@@ -43,6 +44,20 @@ public class Main {
                     break;
             }
         }
+    }
+
+    private static Vehicle[] createVehicles() {
+
+        Vehicle[] vehicles = new Vehicle[10];
+        String[] carNames = Car.createNames();
+        for (int i = 0; i < 10; i++) {
+            car.name = carNames[i];
+
+
+                    System.out.println(testNames);
+                System.out.println(testValue);
+        }
+
     }
 
     /** <h2> Handles the selection in the menu </h2> */
@@ -72,6 +87,7 @@ public class Main {
         }
     }
 
+    /** <h2> Prints the documentation to the console. </h2> */
     private static void printDocumentation() {
         List<String> help = FileReader.readFile("data/documentation.txt");
         clearScreen();
