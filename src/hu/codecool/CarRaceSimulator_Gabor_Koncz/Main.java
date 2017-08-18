@@ -1,8 +1,6 @@
 package hu.codecool.CarRaceSimulator_Gabor_Koncz;
 
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 
 /**
@@ -21,7 +19,6 @@ import java.util.Scanner;
 public class Main {
 
     static Random random = new Random();
-    static Car car = new Car();
 
     public static void main(String[] args) {
         boolean running = true;
@@ -32,7 +29,7 @@ public class Main {
             switch (selection) {
                 case 0:
                     //simulateRace(car);
-                    //createVehicles();
+                    createVehicles();
                     //simulateRace();
                     //printRaceResults();
                     break;
@@ -46,17 +43,17 @@ public class Main {
         }
     }
 
-    private static Vehicle[] createVehicles() {
+    private static List<Vehicle> createVehicles() {
 
-        Vehicle[] vehicles = new Vehicle[10];
-        String[] carNames = Car.createNames();
+        List<Vehicle> vehicles = new ArrayList<>(30);
+
         for (int i = 0; i < 10; i++) {
-            car.name = carNames[i];
-
-
-                    System.out.println(testNames);
-                System.out.println(testValue);
+            Car car = new Car();
+            car.name = car.createCarName();
+            vehicles.add(car);
         }
+        System.out.println(vehicles);
+        return vehicles;
 
     }
 
@@ -110,7 +107,7 @@ public class Main {
 
     /** <h2> Calculates if its raining or not. </h2> */
     private static boolean isRaining() {
-        int rain = random.nextInt(100) + 1;
+        int rain = random.nextInt(100);
         if (rain <= 30) {
             return true;
         }

@@ -6,24 +6,27 @@ import java.util.List;
 
 public class Car extends Vehicle{
 
-    private List<String> allNames;
-    private List<String> carNames;
+    private List<String> allFirstNames = FileReader.readFile("data/carFirstNames.txt");
+    private List<String> allLastNames = FileReader.readFile("data/carLastNames.txt");
 
     public Car() {
-        allNames = FileReader.readFile("data/carNames.txt");
-        carNames = new ArrayList<>(10);
+        String name = createCarName();
+        String type = "Car";
     }
 
-    public List<String> createCarNames() {
+    public String createCarName() {
 
-        Collections.shuffle(allNames);
-        for (int i = 0; i < 10; i++) {
-            //selectedFirstName = allNames.get(i);
-            carNames.add(allNames.get(i));
-        }
+        Collections.shuffle(allFirstNames);
+        Collections.shuffle(allLastNames);
+        name = allFirstNames.get(0) + " " + allLastNames.get(0);
 
-        return carNames;
+        return name;
 
+    }
+
+    @Override
+    public String toString() {
+        return this.createCarName();
     }
 
 
