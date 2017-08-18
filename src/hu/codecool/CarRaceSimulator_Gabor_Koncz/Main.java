@@ -19,6 +19,7 @@ import java.util.*;
 public class Main {
 
     static Random random = new Random();
+    boolean limit = isRaining();
 
     public static void main(String[] args) {
         boolean running = true;
@@ -28,10 +29,10 @@ public class Main {
             int selection = getSelection();
             switch (selection) {
                 case 0:
-                    //simulateRace(car);
-                    createVehicles();
-                    //simulateRace();
-                    //printRaceResults();
+                    Vehicle[] vehicles = createVehicles();
+                    System.out.println(Arrays.toString(vehicles));
+                    Vehicle[] racedVehicles = simulateRace(vehicles);
+                    printRaceResults(racedVehicles);
                     break;
                 case 1:
                     printDocumentation();
@@ -43,19 +44,51 @@ public class Main {
         }
     }
 
-    private static List<Vehicle> createVehicles() {
+    public static Vehicle[] createVehicles() {
 
-        List<Vehicle> vehicles = new ArrayList<>(30);
+        Vehicle[] vehicles = new Vehicle[30];
 
-        for (int i = 0; i < 10; i++) {
-            Car car = new Car();
-            car.name = car.createCarName();
-            vehicles.add(car);
+
+        for (int c = 0; c < 10; c++) {
+            Vehicle car = new Car();
+            vehicles[c] = car;
+
         }
-        System.out.println(vehicles);
+
+        for (int m = 10; m < 20; m++) {
+            Vehicle motorCycle = new Motorcycle();
+            vehicles[m] = motorCycle;
+        }
+
+        for (int t = 20; t < 30; t++) {
+            Vehicle truck = new Truck();
+            vehicles[t] = truck;
+        }
+
         return vehicles;
+    }
+
+    public static Vehicle[] simulateRace(Vehicle[] vehicles) {
+        for (int hour = 1; hour <= 50; hour++) {
+            for (int vehicle = 0; vehicle < 30; vehicle++) {
+                vehicles[vehicle].moveForAnHour(isRaining());
+            }
+        }
+
+        return vehicles;
+    }
+
+    public static void printRaceResults(Vehicle[] vehicles) {
+
+        for (int i = 0; i < 30; i++) {
+            System.out.println(vehicles[i].name + " traveled:  " + vehicles[i].getDistanceTraveled());
+        }
 
     }
+
+
+
+
 
     /** <h2> Handles the selection in the menu </h2> */
     private static int getSelection() {
@@ -70,7 +103,7 @@ public class Main {
 
     /** <h2> Prints out the menu options in the command line </h2> */
     private static void printMenu() {
-        List<String> logo = FileReader.readFile("data/logo.txt");
+        String[] logo = FileReader.readFile("data/logo.txt");
         String[] options = {
                 "Play",
                 "Documentation",
@@ -86,7 +119,7 @@ public class Main {
 
     /** <h2> Prints the documentation to the console. </h2> */
     private static void printDocumentation() {
-        List<String> help = FileReader.readFile("data/documentation.txt");
+        String[] help = FileReader.readFile("data/documentation.txt");
         clearScreen();
         System.out.println("Documentation\n");
         for (String line: help) {

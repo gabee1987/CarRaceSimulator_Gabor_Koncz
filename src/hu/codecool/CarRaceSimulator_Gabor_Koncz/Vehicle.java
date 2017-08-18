@@ -1,20 +1,20 @@
 package hu.codecool.CarRaceSimulator_Gabor_Koncz;
 
 public class Vehicle {
-    String name;
-    String type;
-    int distanceTraveled = 0;
+    public String name;
+    public String type;
+    int distanceTraveled;
 
     public int getDistanceTraveled() {
         return distanceTraveled;
     }
 
-    public String getType() {
+    /*
+    public static String getType() {
         return type;
-    }
+    }*/
 
-    public void moveForAnHout(boolean isRaining) {
-
+    public void moveForAnHour(boolean isRaining) {
     }
 
 }
