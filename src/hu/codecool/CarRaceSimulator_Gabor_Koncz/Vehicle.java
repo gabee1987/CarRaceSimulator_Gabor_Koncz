@@ -9,10 +9,10 @@ public class Vehicle {
         return distanceTraveled;
     }
 
-    /*
-    public static String getType() {
+
+    public String getType() {
         return type;
-    }*/
+    }
 
     public void moveForAnHour(boolean isRaining) {
     }

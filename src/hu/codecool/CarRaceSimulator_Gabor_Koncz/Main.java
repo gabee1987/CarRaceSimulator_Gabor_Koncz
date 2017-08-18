@@ -80,9 +80,19 @@ public class Main {
 
     public static void printRaceResults(Vehicle[] vehicles) {
 
+        int temp = 0;
+        int winner = 0;
+
         for (int i = 0; i < 30; i++) {
             System.out.println(vehicles[i].name + " traveled:  " + vehicles[i].getDistanceTraveled());
+            if (temp < vehicles[i].getDistanceTraveled()) {
+                temp = vehicles[i].getDistanceTraveled();
+                winner = i;
+            }
         }
+
+        System.out.println("\nThe winner is " + vehicles[winner].name + " with a " + vehicles[winner].getType() +
+                            ", " + " traveled " + vehicles[winner].getDistanceTraveled() + " km");
 
     }
 
