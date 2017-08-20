@@ -19,7 +19,6 @@ import java.util.*;
 public class Main {
 
     static Random random = new Random();
-    boolean limit = isRaining();
 
     public static void main(String[] args) {
         boolean running = true;
@@ -30,7 +29,6 @@ public class Main {
             switch (selection) {
                 case 0:
                     Vehicle[] vehicles = createVehicles();
-                    System.out.println(Arrays.toString(vehicles));
                     Vehicle[] racedVehicles = simulateRace(vehicles);
                     printRaceResults(racedVehicles);
                     break;
@@ -44,6 +42,8 @@ public class Main {
         }
     }
 
+
+    /** <h2> Creates the 30 vehicles, return a list. </h2> */
     public static Vehicle[] createVehicles() {
 
         Vehicle[] vehicles = new Vehicle[30];
@@ -68,6 +68,8 @@ public class Main {
         return vehicles;
     }
 
+
+    /** <h2> Simulates the race of the vehicles for 50 hour, returns a list with names and traveled distance </h2> */
     public static Vehicle[] simulateRace(Vehicle[] vehicles) {
         for (int hour = 1; hour <= 50; hour++) {
             for (int vehicle = 0; vehicle < 30; vehicle++) {
@@ -78,6 +80,8 @@ public class Main {
         return vehicles;
     }
 
+
+    /** <h2> Prints out the simulation result in the terminal </h2> */
     public static void printRaceResults(Vehicle[] vehicles) {
 
         int temp = 0;
@@ -100,7 +104,7 @@ public class Main {
 
 
 
-    /** <h2> Handles the selection in the menu </h2> */
+    /** <h2> Handles the selection in the menu, return an integer. </h2> */
     private static int getSelection() {
         System.out.print("Please select an option:");
         Scanner input = new Scanner(System.in);
@@ -111,7 +115,7 @@ public class Main {
         return input.nextInt();
     }
 
-    /** <h2> Prints out the menu options in the command line </h2> */
+    /** <h2> Prints out the menu options in the terminal </h2> */
     private static void printMenu() {
         String[] logo = FileReader.readFile("data/logo.txt");
         String[] options = {
@@ -148,7 +152,7 @@ public class Main {
         System.out.print(String.format("%c[%d;%df", 0x1B, 1, 1));  // position cursor to 1,1
     }
 
-    /** <h2> Calculates if its raining or not. </h2> */
+    /** <h2> Calculates if its raining or not, return a boolean. </h2> */
     private static boolean isRaining() {
         int rain = random.nextInt(100);
         if (rain <= 30) {
